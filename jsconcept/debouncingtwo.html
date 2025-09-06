@@ -1,0 +1,27 @@
+<button id="clickButton">Button</button>
+
+<script>
+  const button = document.getElementById('clickButton');
+
+  function throttle(func,delay){
+    let shouldCall=true;
+
+    return function(...args){
+      if(!shouldCall){
+        return;
+      }
+      func(...args);
+          shouldCall=false;
+
+         setTimeout(()=>{
+          shouldCall=true;
+         },delay)
+      }
+  }
+
+  const buttonClick=()=>{
+    console.log("button clicked");
+  }
+  // button.addEventListener('click',buttonClick);
+  button.addEventListener('click',throttle(buttonClick,500));
+</script>
