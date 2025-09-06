@@ -1,0 +1,16 @@
+<div id="outer" style="padding: 20px; background: lightblue;">
+  Outer
+  <div id="inner" style="padding: 20px; background: lightgreen;">
+    Inner (click me)
+  </div>
+</div>
+
+<script>
+  document.getElementById('outer')
+    .addEventListener('click', () => console.log('Capturing: Outer'), true);
+
+  document.getElementById('inner')
+    .addEventListener('click', () => console.log('Capturing: Inner'), true);
+</script>
+<!-- Capturing: Outer
+Capturing: Inner -->
