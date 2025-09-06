@@ -1,3 +1,4 @@
+<script>
 function throttle(func, delay) {
   let lastCall = 0;
   return function (...args) {
@@ -15,4 +16,10 @@ function resizeWindow(event) {
   document.getElementById("demo").innerHTML = text;
 }
 
-window.addEventListener("resize", resizeWindow);
+// window.addEventListener("resize", resizeWindow);
+window.addEventListener("resize", throttle(resizeWindow,500));
+</script>
+
+<h2 id="demo">Resize the screen</h2>
+
+
