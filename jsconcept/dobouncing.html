@@ -1,17 +1,30 @@
+<h2>Debouncing</h2>
+
 <input type="text" id="searchInput" placeholder="Search...." />
 
 
 <script>
 const searchInput = document.getElementById("searchInput");
+
+function debounce(func,delay){
+  let timeout;
+  return function(...args){
+    clearTimeout(timeout)
+   timeout= setTimeout(()=>{
+      func(...args)
+    },delay);
+  }
+}
 const myFunction =function(event){
   const query = event.target.value;
   console.log("query is: ", query);
 
-  fetch(`https://api.example.com/search?query=${query}`)
-  .then((response)=>response.json())
-  .then((data)=>{
-    console.log(data);
-  });
+  // fetch(`https://api.example.com/search?query=${query}`)
+  // .then((response)=>response.json())
+  // .then((data)=>{
+  //   console.log(data);
+  // });
 };
-searchInput.addEventListener('input',myFunction);
+// searchInput.addEventListener('input',myFunction);
+searchInput.addEventListener('input',debounce(myFunction,500 ));
 </script>
