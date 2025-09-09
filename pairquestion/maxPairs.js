@@ -1,16 +1,14 @@
 function maxPairs(arr) {
   let pairs = 0;
-  const obj = {};
-
-  arr.forEach((i) => {
-    if (obj[i]) {
-      pairs += 1;
-      obj[i] = 0;
+  let obj = {};
+  arr.forEach((element) => {
+    if (obj[element]) {
+      pairs++;
+      obj[element] = 0;
     } else {
-      obj[i] = 1;
+      obj[element] = 1;
     }
   });
-
   return pairs;
 }
 
