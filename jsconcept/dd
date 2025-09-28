@@ -1,0 +1,58 @@
+During my recent job search, I interviewed with Abhibus for the SD2 Frontend Engineer role. The process was rigorous, insightful, and packed with real-world scenarios. Although I had to decline the offer due to compensation, the experience was truly rewarding.
+
+🔹 Round 1 – JavaScript Mastery (Hands-On) 
+Pure JS, no frameworks—just logic and fundamentals.
+✅ Output-based questions on let, var, const 
+✅ Async behavior with setTimeout, Promise, fetch – and their combinations 
+✅ Function composition challenge:
+function sum5(num){ return num+5; }
+function multiply3(num){ return num *3; }
+function subtract2(num){ return num-2; }
+
+function consolidate(...fns){
+ // 3 approaches I shared:
+ // 1. Iterate from last to first
+ // 2. Reverse + reduce
+ // 3. Use reduceRight (interviewer’s pick)
+ return function(val){
+ return fns.reduceRight((acc, fn) => fn(acc), val);
+ };
+}
+
+const evaluate = consolidate(sum5, multiply3, subtract2);
+console.log(evaluate(5)); // Output: 16
+✅ Implement debounce polyfill 
+✅ Implement Promise.all() polyfill
+
+🔹 Round 2 – React Deep Dive
+ From architecture to async flows.
+⚛️ React architecture and rendering
+📝 Build a simple TODO list 
+🔄 Redux vs Redux Toolkit – deep dive 
+⏳ Async handling in React (thunks, effects, etc.) 
+📁 Project-specific questions 
+🧠 Optimal solutions for real-world requirements
+
+🔹 Round 3 – Theory & Experience
+ No coding, just deep discussions.
+🌐 Optimization, migration, domain-specific questions (network, HTTP) 
+🏗️ Architecture breakdown of my previous projects 
+🧠 Behavioral and decision-making questions
+
+🔹 Round 4 – Vision & Culture Fit 
+A blend of career reflection and product thinking.
+📈 My career journey and approach to new challenges 
+🧪 UI/UX critique of Abhibus and enhancement suggestions 
+🤝 Team bonding, Agile practices, collaboration
+
+🎯 Final Outcome:
+ I was selected for the SD2 Frontend Engineer role!
+While I couldn’t accept due to compensation, I’m proud of the journey and grateful for the opportunity to engage with such a thoughtful interview process.
+
+💡 Key Takeaways:
+* Core JS knowledge is still king
+* Real-world React scenarios matter more than textbook answers
+* Communication and architecture clarity go a long way
+* Every round is a chance to grow
+
+If you're preparing for frontend interviews, I hope this helps! Feel free to reach out if you want to discuss prep strategies, resources, or just geek out over JS and React.
