@@ -35,7 +35,7 @@ function movezerosfor(arr) {
   let i = 0;
   let j = 0;
   for (; i < arr.length; i++) {
-    if (arr[i] == 0) {
+    if (arr[i] < 0) {
       let temp = arr[i];
       arr[i] = arr[j];
       arr[j] = temp;
@@ -45,4 +45,4 @@ function movezerosfor(arr) {
 
   return arr;
 }
-console.log(movezerosfor([0, 1, 0, 1, 0, 0, 1, 0, 1]));
+console.log(movezerosfor([10, -1, 20, -11, -30, 60, 91, 40, 15]));
