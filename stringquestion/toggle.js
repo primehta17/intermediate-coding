@@ -1,4 +1,4 @@
-let str = "Apple";
+let str = "AppleZ";
 let newstr = "";
 for (let i = 0; i < str.length; i++) {
   if (
@@ -13,4 +13,14 @@ for (let i = 0; i < str.length; i++) {
     newstr += str.charAt(i).toLowerCase();
   }
 }
-console.log(newstr);
+// console.log(newstr);
+
+let newchar = "";
+for (let i = 0; i < str.length; i++) {
+  if (str[i].charCodeAt() >= 65 && str[i].charCodeAt() <= 90) {
+    newchar += String.fromCharCode(str[i].charCodeAt() + 32);
+  } else if (str[i].charCodeAt() >= 97 && str[i].charCodeAt() <= 122) {
+    newchar += String.fromCharCode(str[i].charCodeAt() - 32);
+  }
+}
+console.log(newchar);
