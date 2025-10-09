@@ -29,3 +29,14 @@ function maxarraysum(arr) {
   return max;
 }
 console.log(maxarraysum([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+function subarraysum(arr) {
+  let max = -Infinity,
+    sum = 0;
+  for (let x of arr) {
+    sum = Math.max(x, sum + x);
+    max = Math.max(max, sum);
+  }
+  return max;
+}
+console.log(subarraysum([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
