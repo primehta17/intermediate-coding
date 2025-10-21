@@ -1,6 +1,7 @@
 function unusualSubtraction(n, k) {
   let newnum = 0;
-  if (n[n.length - 1] < k) {
+  let last = n % 10;
+  if (last < k) {
     return newnum;
   }
   newnum = Number(n) - Number(k);
