@@ -1,0 +1,34 @@
+function transposeNotes(notes, semitones) {
+  const noteMap = [
+    "C",
+    "C#",
+    "D",
+    "D#",
+    "E",
+    "F",
+    "F#",
+    "G",
+    "G#",
+    "A",
+    "A#",
+    "B",
+  ];
+  const mapLen = noteMap.length;
+  let newarr = [];
+
+  for (let i = 0; i < noteMap.length; i++) {
+    for (let j = 0; j < notes.length; j++) {
+      if (noteMap[i] === notes[j]) {
+        // compute new index with wrap around
+        let newIdx = i + semitones;
+        // handle if it's negative or exceeds length
+        while (newIdx < 0) newIdx += mapLen;
+        while (newIdx >= mapLen) newIdx -= mapLen;
+
+        newarr.push(noteMap[newIdx]);
+      }
+    }
+  }
+
+  return newarr;
+}
