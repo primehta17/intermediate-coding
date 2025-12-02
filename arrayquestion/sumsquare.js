@@ -5,6 +5,6 @@ function sumSquare(arr) {
   for (let i = 0; i < arr.length; i++) {
     sum += arr[i] * arr[i];
   }
-  return sum;
+  return `${sum}`;
 }
 console.log(sumSquare([1, 2, 3, 4]));
